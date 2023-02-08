@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { UrlContext } from "../../../context/UrlContext";
+import React, { useContext, useEffect, useState } from "react";
+import { itemObject, UrlContext } from "../../../context/UrlContext";
 import CancelButton from "../../UI/Buttons/CancelButton";
 import DeleteButton from "../../UI/Buttons/DeleteButton";
 import EditButton from "../../UI/Buttons/EditButton";
@@ -15,6 +15,9 @@ const ListItem = ({ item, id }: Props) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [editedInput, setEditedInput] = useState<string>(item);
   const { removeItem, editItem } = useContext(UrlContext);
+
+  console.log("editing:", editedInput);
+  console.log("saved", item);
 
   const handleRemoveItem = () => {
     removeItem(id);
@@ -46,6 +49,12 @@ const ListItem = ({ item, id }: Props) => {
 
     setIsEditing(false);
   };
+
+  useEffect(() => {
+    if (editedInput === item) {
+      setIsEditing(false);
+    }
+  }, [editedInput]);
 
   return (
     <div className={classes["list-item-container"]}>

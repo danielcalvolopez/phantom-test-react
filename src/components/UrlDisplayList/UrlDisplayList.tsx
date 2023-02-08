@@ -57,11 +57,9 @@ const UrlDisplayList = (props: Props) => {
         </div>
       )}
 
-      {Array.isArray(currentItems)
-        ? currentItems.map(({ id, item }) => (
-            <ListItem key={uuid()} item={item} id={id} />
-          ))
-        : null}
+      {currentItems.map(({ id, item }) => (
+        <ListItem key={uuid()} item={item} id={id} />
+      ))}
 
       <Pagination
         paginate={paginate}

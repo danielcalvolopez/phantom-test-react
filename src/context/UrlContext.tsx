@@ -34,8 +34,6 @@ const UrlContextProvider = ({ children }: Props) => {
     JSON.parse(localStorage.getItem("urls") as any) || []
   );
 
-  console.log(data);
-
   const [hasError, setHasError] = useState(false);
 
   const isValidURL = (str: string) => {
