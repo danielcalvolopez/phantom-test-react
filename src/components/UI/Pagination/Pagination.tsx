@@ -14,14 +14,14 @@ const Pagination = ({
   paginate,
   currentPage,
 }: Props) => {
+  // Empty array that is filled with page numbers as the list (array) grows, and depends on the number of elements per page
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
+  // Calculate the total number of pages
   const totalPages = pageNumbers.length;
-
-  console.log(totalPages, currentPage);
 
   return (
     <nav className={classes["pagination-container"]}>

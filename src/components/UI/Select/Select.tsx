@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from "react";
+import { ChangeEventHandler } from "react";
 import uuid from "react-uuid";
 import classes from "./Select.module.css";
 
