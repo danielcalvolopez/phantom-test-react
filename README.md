@@ -29,3 +29,9 @@ For styling I decided to use CSS modules for the same reason, keeping the style 
 You will find another folder called utils where constants, functions or data can be stored. In this case I created a file to store the pagination options in an array (5, 10, 20, 30) to be mapped and avoid hard coded elements.
 
 A limitation we can potentially have with this approach, if the application grows, is that state management will require a more powerful tool such as Redux, useState and useContext are very handy for small / medium sized applications but not that recommended for large applications.
+
+Design:
+
+![screenshot1](src/assets/screenshot1.png)
+
+![screenshot2](src/assets/screenshot2.png)
