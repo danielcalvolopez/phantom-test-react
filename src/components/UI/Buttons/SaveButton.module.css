@@ -1,0 +1,17 @@
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.save-button .logo {
+  fill: var(--green);
+}
+
+.save-button:hover {
+  background-color: var(--lightgreen);
+}

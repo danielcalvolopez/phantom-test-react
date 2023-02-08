@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  border: none;
+  background-color: var(--cream);
+  color: var(--green);
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 50%;
+}
+
+.button:hover {
+  background-color: var(--lightgreen);
+  color: var(--pastel);
+}
+
+.button:active {
+  transform: scale(1.1);
+}

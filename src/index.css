@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;300;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  max-width: 100vw;
+  font-family: "Exo", sans-serif;
+  background-color: var(--bg);
+
+  --bg: #0d0d0d;
+  --cream: #d9c9ba;
+  --pastel: #f2efeb;
+  --lightgreen: #888c81;
+  --green: #3d403a;
+}

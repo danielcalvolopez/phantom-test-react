@@ -1,0 +1,10 @@
+.nothing-to-show {
+  text-align: center;
+  color: var(--green);
+}
+
+.url-display-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,17 @@
+.edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-button .logo {
+  fill: var(--green);
+}
+
+.edit-button:hover {
+  background-color: var(--lightgreen);
+}

@@ -1,0 +1,17 @@
+.cancel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-button .logo {
+  fill: red;
+}
+
+.cancel-button:hover {
+  background-color: rgba(255, 0, 0, 0.23);
+}

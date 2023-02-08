@@ -1,0 +1,33 @@
+.list-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--pastel);
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+.editing {
+  border: 1px solid var(--green);
+}
+
+.list-item-container .url {
+  color: var(--green);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.list-item-container .url input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: var(--lightgreen);
+  background-color: var(--pastel);
+  font-weight: 400;
+  width: 550px;
+}
+
+.list-item-container .actions-buttons {
+  display: flex;
+  gap: 5px;
+}
