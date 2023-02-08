@@ -12,35 +12,44 @@ type Props = {
 };
 
 const ListItem = ({ item, id }: Props) => {
+  // State of the edited field
   const [editedInput, setEditedInput] = useState<string>(item);
+
+  // useContext is used to bring the functions that can manipulate the elements like remove or edit, and also be able to identify and modify the editing state
   const { removeItem, editItem, isEditing, setIsEditing } =
     useContext(UrlContext);
 
+  // Handles remove items
   const handleRemoveItem = () => {
     removeItem(id);
   };
 
+  // This makes possible to click on the link and go the specific URL
   const handleOnClickUrl = () => {
     window.open(item);
   };
 
+  // Handles access editing mode
   const handleIsEditing = () => {
-    setIsEditing((prev) => !prev);
+    setIsEditing(true);
 
     setEditedInput(item);
   };
 
+  // Handles exit editing mode
   const handleExitEditing = () => {
     setIsEditing(false);
     setEditedInput(item);
   };
 
+  // Handles new value in editing mode
   const handleInputEditing = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setEditedInput(event.target.value);
   };
 
+  // Handle save the edited value
   const handleSaveEdit = () => {
     editItem(id, editedInput);
 

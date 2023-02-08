@@ -19,8 +19,21 @@ const Pagination = ({
     pageNumbers.push(i);
   }
 
+  const totalPages = pageNumbers.length;
+
+  console.log(totalPages, currentPage);
+
   return (
     <nav className={classes["pagination-container"]}>
+      {currentPage > 1 && (
+        <div
+          className={classes.arrow}
+          onClick={() => paginate(currentPage - 1)}
+        >
+          {"<"}
+        </div>
+      )}
+
       <ul className={classes.list}>
         {pageNumbers.map((number) => (
           <li
@@ -33,6 +46,15 @@ const Pagination = ({
           </li>
         ))}
       </ul>
+
+      {currentPage < totalPages && (
+        <div
+          className={classes.arrow}
+          onClick={() => paginate(currentPage + 1)}
+        >
+          {">"}
+        </div>
+      )}
     </nav>
   );
 };

@@ -13,14 +13,17 @@ const UrlForm = (props: Props) => {
 
   const [url, setUrl] = useState("");
 
+  // Store the value of the input
   const handleUrlInput = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setUrl(event.target.value);
   };
 
+  // Add a new url to the list and empty the input field
   const handleOnSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+
     addItem(url);
     setUrl("");
   };
@@ -35,6 +38,7 @@ const UrlForm = (props: Props) => {
           onChange={handleUrlInput}
         />
         {hasError && <p className={classes.error}>Enter a valid url!</p>}
+
         <div className={classes["submit-button"]}>
           <Button>+</Button>
         </div>

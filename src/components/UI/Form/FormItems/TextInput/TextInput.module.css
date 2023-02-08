@@ -15,5 +15,5 @@
 }
 
 .text-input::placeholder {
-  color: var(--lightgreen);
+  color: rgba(128, 128, 128, 0.558);
 }

@@ -49,3 +49,9 @@
   width: 25px;
   border-radius: 50%;
 }
+
+.arrow {
+  color: var(--pastel);
+  font-size: 20px;
+  cursor: pointer;
+}
