@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, Dispatch, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -17,6 +17,8 @@ interface urlContextProps {
   hasError: boolean;
   editItem: (id: number, value: string) => void;
   setData: (value: itemObject[]) => void;
+  isEditing: boolean;
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const UrlContext = createContext<urlContextProps>({
@@ -27,6 +29,8 @@ export const UrlContext = createContext<urlContextProps>({
   hasError: false,
   editItem: function (id: number, value: string): void {},
   setData: function (value: itemObject[]): void {},
+  isEditing: false,
+  setIsEditing: function (): void {},
 });
 
 const UrlContextProvider = ({ children }: Props) => {
@@ -34,7 +38,8 @@ const UrlContextProvider = ({ children }: Props) => {
     JSON.parse(localStorage.getItem("urls") as any) || []
   );
 
-  const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = useState<boolean>(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
 
   const isValidURL = (str: string) => {
     var pattern = new RegExp(
@@ -87,6 +92,8 @@ const UrlContextProvider = ({ children }: Props) => {
   return (
     <UrlContext.Provider
       value={{
+        setIsEditing,
+        isEditing,
         setData,
         data,
         addItem,

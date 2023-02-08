@@ -12,12 +12,9 @@ type Props = {
 };
 
 const ListItem = ({ item, id }: Props) => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [editedInput, setEditedInput] = useState<string>(item);
-  const { removeItem, editItem } = useContext(UrlContext);
-
-  console.log("editing:", editedInput);
-  console.log("saved", item);
+  const { removeItem, editItem, isEditing, setIsEditing } =
+    useContext(UrlContext);
 
   const handleRemoveItem = () => {
     removeItem(id);
@@ -49,12 +46,6 @@ const ListItem = ({ item, id }: Props) => {
 
     setIsEditing(false);
   };
-
-  useEffect(() => {
-    if (editedInput === item) {
-      setIsEditing(false);
-    }
-  }, [editedInput]);
 
   return (
     <div className={classes["list-item-container"]}>
