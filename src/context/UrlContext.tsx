@@ -26,16 +26,17 @@ interface urlContextProps {
   setIsEditing: Dispatch<SetStateAction<boolean>>;
 }
 
+// Context initial state
 export const UrlContext = createContext<urlContextProps>({
   data: [],
-  addItem: function (value: string): void {},
-  removeItem: function (id: number): void {},
-  removeAll: function (): void {},
+  addItem: () => {},
+  removeItem: () => {},
+  removeAll: () => {},
   hasError: false,
-  editItem: function (id: number, value: string): void {},
-  setData: function (value: itemObject[]): void {},
+  editItem: () => {},
+  setData: () => {},
   isEditing: false,
-  setIsEditing: function (): void {},
+  setIsEditing: () => {},
 });
 
 const UrlContextProvider = ({ children }: Props) => {
@@ -50,7 +51,7 @@ const UrlContextProvider = ({ children }: Props) => {
 
   // URL format validation with regular expression that accepts a string and returns a test
   const isValidURL = (str: string) => {
-    var pattern = new RegExp(
+    const pattern = new RegExp(
       "^(https?:\\/\\/)?" +
         "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +
         "((\\d{1,3}\\.){3}\\d{1,3}))" +
@@ -59,7 +60,7 @@ const UrlContextProvider = ({ children }: Props) => {
         "(\\#[-a-z\\d_]*)?$",
       "i"
     );
-    return !!pattern.test(str);
+    return pattern.test(str);
   };
 
   // Check if the value entered meets the URL criteria. Add the item with an ID if correct and change state to hasError true if not
@@ -89,12 +90,11 @@ const UrlContextProvider = ({ children }: Props) => {
 
   // Accepts two parameters, id to identify the element in the URL list, and new value to update the value
   const editItem = (id: number, newValue: string) => {
-    let newData = [...data];
-    let index = newData.findIndex((item) => item.id === id);
-    if (index !== -1) {
-      data[index].item = newValue;
-    }
-    return newValue;
+    const index = data.findIndex((item) => item.id === id);
+    const newData = [...data];
+    newData[index].item = newValue;
+    localStorage.setItem("urls", JSON.stringify(newData));
+    setData(newData);
   };
 
   // Removes everything from the URL list (data array) and from local storage

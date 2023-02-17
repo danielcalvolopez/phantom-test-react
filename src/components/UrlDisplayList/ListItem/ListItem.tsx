@@ -15,9 +15,10 @@ const ListItem = ({ item, id }: Props) => {
   // State of the edited field
   const [editedInput, setEditedInput] = useState<string>(item);
 
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+
   // useContext is used to bring the functions that can manipulate the elements like remove or edit, and also be able to identify and modify the editing state
-  const { removeItem, editItem, isEditing, setIsEditing } =
-    useContext(UrlContext);
+  const { removeItem, editItem } = useContext(UrlContext);
 
   // Handles remove items
   const handleRemoveItem = () => {
@@ -32,8 +33,6 @@ const ListItem = ({ item, id }: Props) => {
   // Handles access editing mode
   const handleIsEditing = () => {
     setIsEditing(true);
-
-    setEditedInput(item);
   };
 
   // Handles exit editing mode
@@ -52,7 +51,6 @@ const ListItem = ({ item, id }: Props) => {
   // Handle save the edited value
   const handleSaveEdit = () => {
     editItem(id, editedInput);
-
     setIsEditing(false);
   };
 

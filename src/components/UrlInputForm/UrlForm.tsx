@@ -6,9 +6,7 @@ import Form from "../UI/Form/Form";
 import TextInput from "../UI/Form/FormItems/TextInput/TextInput";
 import classes from "./UrlForm.module.css";
 
-type Props = {};
-
-const UrlForm = (props: Props) => {
+const UrlForm = () => {
   const { addItem, hasError } = useContext(UrlContext);
 
   const [url, setUrl] = useState("");
@@ -29,7 +27,7 @@ const UrlForm = (props: Props) => {
   };
 
   return (
-    <Card style={{ backgroundColor: "var(--pastel)" }}>
+    <Card className={classes.container}>
       <Form onSubmit={handleOnSubmit} title="Add Url">
         <TextInput
           label=""

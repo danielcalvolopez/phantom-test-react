@@ -10,7 +10,7 @@ type Props = {
 
 const TextInput = ({ label, value, onChange, placeholder }: Props) => {
   return (
-    <>
+    <div>
       <label>{label}</label>
       <input
         className={classes["text-input"]}
@@ -19,7 +19,7 @@ const TextInput = ({ label, value, onChange, placeholder }: Props) => {
         value={value}
         onChange={onChange}
       />
-    </>
+    </div>
   );
 };
 

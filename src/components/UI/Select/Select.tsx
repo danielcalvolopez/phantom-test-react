@@ -4,7 +4,7 @@ import classes from "./Select.module.css";
 
 type Props = {
   name: string;
-  id: string;
+  id?: string;
   data: number[];
   title: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
