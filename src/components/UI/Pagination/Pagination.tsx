@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import uuid from "react-uuid";
 import classes from "./Pagination.module.css";
 
@@ -14,11 +15,16 @@ const Pagination = ({
   paginate,
   currentPage,
 }: Props) => {
+  const [pageNumbers, setPageNumbers] = useState<number[]>([]);
+
   // Empty array that is filled with page numbers as the list (array) grows, and depends on the number of elements per page
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  useEffect(() => {
+    const newPageNumbers = [];
+    for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i += 1) {
+      newPageNumbers.push(i);
+    }
+    setPageNumbers(newPageNumbers);
+  }, [totalItems, itemsPerPage]);
 
   // Calculate the total number of pages
   const totalPages = pageNumbers.length;
