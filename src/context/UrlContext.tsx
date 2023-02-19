@@ -4,6 +4,7 @@ import React, {
   SetStateAction,
   useState,
 } from "react";
+import isValidURL from "../utils/functions/validUrl";
 
 type Props = {
   children: React.ReactNode;
@@ -49,20 +50,6 @@ const UrlContextProvider = ({ children }: Props) => {
   const [hasError, setHasError] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
-  // URL format validation with regular expression that accepts a string and returns a test
-  const isValidURL = (str: string) => {
-    const pattern = new RegExp(
-      "^(https?:\\/\\/)?" +
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +
-        "((\\d{1,3}\\.){3}\\d{1,3}))" +
-        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" +
-        "(\\?[;&a-z\\d%_.~+=-]*)?" +
-        "(\\#[-a-z\\d_]*)?$",
-      "i"
-    );
-    return pattern.test(str);
-  };
-
   // Check if the value entered meets the URL criteria. Add the item with an ID if correct and change state to hasError true if not
   const addItem = (value: string) => {
     const found = data.find((url) => url.item === value);
@@ -93,6 +80,7 @@ const UrlContextProvider = ({ children }: Props) => {
     const index = data.findIndex((item) => item.id === id);
     const newData = [...data];
     newData[index].item = newValue;
+
     localStorage.setItem("urls", JSON.stringify(newData));
     setData(newData);
   };

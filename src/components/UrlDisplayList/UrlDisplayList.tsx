@@ -7,7 +7,6 @@ import Select from "../UI/Select/Select";
 import ListItem from "./ListItem/ListItem";
 import classes from "./UrlDisplayList.module.css";
 import paginationOptions from "../../utils/constants/paginationOptions";
-import uuid from "react-uuid";
 
 const UrlDisplayList = () => {
   const { data, removeAll } = useContext(UrlContext);
