@@ -81,8 +81,10 @@ const UrlContextProvider = ({ children }: Props) => {
     const newData = [...data];
     newData[index].item = newValue;
 
-    localStorage.setItem("urls", JSON.stringify(newData));
-    setData(newData);
+    if (isValidURL(newValue)) {
+      localStorage.setItem("urls", JSON.stringify(newData));
+      setData(newData);
+    }
   };
 
   // Removes everything from the URL list (data array) and from local storage
