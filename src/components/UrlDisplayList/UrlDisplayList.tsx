@@ -33,7 +33,7 @@ const UrlDisplayList = () => {
   const isEmptyList = useMemo(() => data.length === 0, [data]);
 
   return (
-    <Card style={{ backgroundColor: "var(--cream)" }}>
+    <Card className={classes["list-container"]}>
       {isEmptyList ? (
         <h3 className={classes["nothing-to-show"]}>There is nothing to show</h3>
       ) : (

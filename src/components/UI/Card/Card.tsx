@@ -3,11 +3,10 @@ import classes from "./Card.module.css";
 
 type Props = {
   children: React.ReactNode;
-  style?: React.CSSProperties;
   className?: string;
 };
 
-const Card = ({ children, style, className }: Props) => {
+const Card = ({ children, className }: Props) => {
   const classNames = useMemo(() => {
     const defaultClassname = classes.card;
 
@@ -17,11 +16,7 @@ const Card = ({ children, style, className }: Props) => {
 
     return defaultClassname;
   }, []);
-  return (
-    <div className={classNames} style={style}>
-      {children}
-    </div>
-  );
+  return <div className={classNames}>{children}</div>;
 };
 
 export default Card;

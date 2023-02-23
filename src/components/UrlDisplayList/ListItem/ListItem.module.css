@@ -1,5 +1,6 @@
 .list-item-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: var(--pastel);
@@ -15,6 +16,7 @@
   color: var(--green);
   cursor: pointer;
   font-size: 18px;
+  overflow: scroll;
 }
 
 .list-item-container .url input {
