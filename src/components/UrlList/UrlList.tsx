@@ -5,7 +5,7 @@ import Card from "../UI/Card/Card";
 import Pagination from "../UI/Pagination/Pagination";
 import Select from "../UI/Select/Select";
 import ListItem from "./ListItem/ListItem";
-import classes from "./UrlDisplayList.module.css";
+import classes from "./UrlList.module.css";
 import paginationOptions from "../../utils/constants/paginationOptions";
 
 const UrlDisplayList = () => {
