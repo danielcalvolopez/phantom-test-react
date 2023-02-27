@@ -4,7 +4,7 @@ import Button from "../UI/Buttons/Button";
 import Card from "../UI/Card/Card";
 import Form from "../UI/Form/Form";
 import TextInput from "../UI/Form/FormItems/TextInput/TextInput";
-import classes from "./UrlForm.module.css";
+import classes from "./AddUrl.module.css";
 
 const UrlForm = () => {
   const { addItem, hasError } = useContext(UrlContext);

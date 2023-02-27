@@ -1,3 +1,7 @@
+.list-container {
+  background-color: var(--cream);
+}
+
 .nothing-to-show {
   text-align: center;
   color: var(--green);

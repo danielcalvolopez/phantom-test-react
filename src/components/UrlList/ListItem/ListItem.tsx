@@ -60,6 +60,7 @@ const ListItem = ({ item, id }: Props) => {
         <>
           <h3 className={classes.url}>
             <input
+              autoFocus
               type="text"
               value={editedInput}
               onChange={handleInputEditing}

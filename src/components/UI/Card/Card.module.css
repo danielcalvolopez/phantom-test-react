@@ -7,3 +7,15 @@
   width: 45rem;
   border-radius: 2px;
 }
+
+@media (max-width: 1000px) {
+  .card {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 20rem;
+  }
+}
