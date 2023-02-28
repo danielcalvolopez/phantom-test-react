@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillEdit as EditIcon } from "react-icons/ai";
 import classes from "./EditButton.module.css";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 const EditButton = ({ size, onClick }: Props) => {
   return (
     <button className={classes["edit-button"]} onClick={onClick}>
-      <AiFillEdit className={classes.logo} size={size} />
+      <EditIcon className={classes.logo} size={size} />
     </button>
   );
 };

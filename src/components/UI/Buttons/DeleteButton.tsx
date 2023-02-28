@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDelete as DeleteIcon } from "react-icons/ai";
 import classes from "./DeleteButton.module.css";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 const DeleteButton = ({ size, onClick }: Props) => {
   return (
     <button className={classes["delete-button"]} onClick={onClick}>
-      <AiOutlineDelete className={classes.logo} size={size} />
+      <DeleteIcon className={classes.logo} size={size} />
     </button>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineSave } from "react-icons/ai";
+import { AiOutlineSave as SaveIcon } from "react-icons/ai";
 import classes from "./SaveButton.module.css";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 const SaveButton = ({ size, onClick }: Props) => {
   return (
     <button className={classes["save-button"]} onClick={onClick}>
-      <AiOutlineSave className={classes.logo} size={size} />
+      <SaveIcon className={classes.logo} size={size} />
     </button>
   );
 };
