@@ -68,7 +68,7 @@ const UrlContextProvider = ({ children }: Props) => {
     }
   };
 
-  // To remove a specific item from the URL list and from the localStorage
+  // Removes a specific item from the URL list and from the localStorage based on the id
   const removeItem = (id: number) => {
     const dataToRemove = data.filter((item) => item.id !== id);
     localStorage.setItem("urls", JSON.stringify(dataToRemove));
